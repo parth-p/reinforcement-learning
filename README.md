@@ -33,7 +33,8 @@ loss = (q_value - expected_q_value.data).pow(2).mean()
 * Input to network is 4 such frames stacked together and output is 6 actions [0, 1,.....5] and the network used here is convolutional neural network.
 * For double DQN, update policy is similar as in above case.
 
-## 4. cartpole-dueling-DQN :
+## 4. dueling-DQN :
 * It is a pytorch implementation of Dueling DQN to train cartpole problem in OpenAI environment.
 ![alt text](dueling.png "Network")
-* Here prioritized memory replay is used and while update, the samples taken from memory are in prioritized order given by the error at that step. Data structure used here is Sum tree
+* Here prioritized memory replay is used and while update, the samples taken from memory are in prioritized order given by the error at that step. Data structure used here is Sum tree.
+* It works for atari problems as well if linear layers are converted to cnn and network is changed accordingly.
