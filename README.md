@@ -27,3 +27,13 @@ loss = (q_value - expected_q_value.data).pow(2).mean()
 ~~~~
 * And model 1 is synchronized with model 2 periodically
 
+## 3. atari-dqn :
+* It is a pytorch implementation of Deep Q Networks to train atari games in OpenAI environment.
+* Here observations are frrames of 210x160x3 but we reshape them to 80x80 frames.
+* Input to network is 4 such frames stacked together and output is 6 actions [0, 1,.....5] and the network used here is convolutional neural network.
+* For double DQN, update policy is similar as in above case.
+
+## 4. cartpole-dueling-DQN :
+* It is a pytorch implementation of Dueling DQN to train cartpole problem in OpenAI environment.
+![alt text](dueling.png "Network")
+* Here prioritized memory replay is used and while update, the samples taken from memory are in prioritized order given by the error at that step. Data structure used here is Sum tree
